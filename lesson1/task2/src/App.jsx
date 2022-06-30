@@ -4,10 +4,7 @@ import { UserDataContext, userData } from './userData-context';
 
 class App extends React.Component {
   state = {
-    userData: {
-      name: userData.name,
-      avatar_url: userData.avatar_url,
-    },
+    userData: userData,
   };
   render() {
     return (
