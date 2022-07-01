@@ -23,8 +23,8 @@ resetBtn.addEventListener('click', onReset);
 store.subscribe(() => {
   const state = store.getState();
   const currentValue = state.history.reduce((acc, value) => acc + value, 0);
-
-  const historyString = state.history
+  const copyStateHistory = state.history;
+  const historyString = copyStateHistory
     .map(el => {
       if (el === 1) {
         el = incrementBtn.textContent;
