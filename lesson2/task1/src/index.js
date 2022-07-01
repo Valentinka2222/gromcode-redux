@@ -23,4 +23,4 @@ const counter = (state = 0, action) => {
   }
 };
 
-export { increment, decrement };
+export { increment, decrement, INCREMENT, DECREMENT };
