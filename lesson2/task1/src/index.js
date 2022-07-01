@@ -8,15 +8,15 @@ const decrement = () => {
     type: 'COUNTER/DECREMENT',
   };
 };
-const counterReducer = (store = 0, action) => {
+const counter = (state = 0, action) => {
   switch (action.type) {
     case 'COUNTER/INCREMENT':
-      return store + 1;
+      return state + 1;
     case 'COUNTER/DECREMENT':
-      return store - 1;
+      return state - 1;
 
     default:
-      return store;
+      return state;
   }
 };
 
