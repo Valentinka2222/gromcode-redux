@@ -1,14 +1,11 @@
-const INCREMENT = 'COUNTER/INCREMENT';
-const DECREMENT = 'COUNTER/DECREMENT';
-
 const increment = () => {
   return {
-    type: INCREMENT,
+    type: 'COUNTER/INCREMENT',
   };
 };
 const decrement = () => {
   return {
-    type: DECREMENT,
+    type: 'COUNTER/DECREMENT',
   };
 };
 const counterReducer = (state = 0, action) => {
@@ -23,4 +20,4 @@ const counterReducer = (state = 0, action) => {
   }
 };
 
-export { increment, decrement, counterReducer };
+export { increment, decrement };
