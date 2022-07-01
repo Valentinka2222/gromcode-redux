@@ -27,7 +27,7 @@ store.subscribe(() => {
   const historyString = state.history
     .map(el => {
       if (el === 1) {
-        el = incrementBtn.textContent;
+        el = '+' + el;
       }
       return el;
     })
