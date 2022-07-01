@@ -1,12 +1,12 @@
 const INCREMENT = 'COUNTER/INCREMENT';
 const DECREMENT = 'COUNTER/DECREMENT';
 
-export const increment = () => {
+const increment = () => {
   return {
     type: INCREMENT,
   };
 };
-export const decrement = () => {
+const decrement = () => {
   return {
     type: DECREMENT,
   };
