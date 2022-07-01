@@ -22,7 +22,7 @@ resetBtn.addEventListener('click', onReset);
 
 store.subscribe(() => {
   const state = store.getState();
-  const currentValue = state.history.reduce((acc, value) => acc + value, 0);
+  const currentValue = state.history.reduce((acc, value) => acc + value);
   const copyStateHistory = state.history;
   const historyString = copyStateHistory
     .map(el => {
