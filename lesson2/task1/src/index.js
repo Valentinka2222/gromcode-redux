@@ -8,8 +8,8 @@ const decrement = () => {
     type: 'COUNTER/DECREMENT',
   };
 };
-const counter = (state = 0, action) => {
-  switch (action.type) {
+const counterReducer = (state = 0, actions) => {
+  switch (actions.type) {
     case 'COUNTER/INCREMENT':
       return state + 1;
     case 'COUNTER/DECREMENT':
