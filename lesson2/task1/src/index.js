@@ -1,18 +1,21 @@
+const INCREMENT = 'COUNTER/INCREMENT';
+const DECREMENT = 'COUNTER/DECREMENT';
+
 const increment = () => {
   return {
-    type: 'COUNTER/INCREMENT',
+    type: INCREMENT,
   };
 };
 const decrement = () => {
   return {
-    type: 'COUNTER/DECREMENT',
+    type: DECREMENT,
   };
 };
-const counterReducer = (state = 0, actions) => {
-  switch (actions.type) {
-    case 'COUNTER/INCREMENT':
+const counter = (state = 0, action) => {
+  switch (action.type) {
+    case INCREMENT:
       return state + 1;
-    case 'COUNTER/DECREMENT':
+    case DECREMENT:
       return state - 1;
 
     default:
