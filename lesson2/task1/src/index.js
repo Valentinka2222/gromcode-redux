@@ -23,4 +23,4 @@ const counterReducer = (state = 0, action) => {
   }
 };
 
-export { increment, decrement };
+export { increment, decrement, counterReducer };
