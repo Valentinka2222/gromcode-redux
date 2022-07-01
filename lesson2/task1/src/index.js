@@ -10,9 +10,9 @@ const decrement = () => {
 };
 const counterReducer = (state = 0, action) => {
   switch (action.type) {
-    case INCREMENT:
+    case 'COUNTER/INCREMENT':
       return state + 1;
-    case DECREMENT:
+    case 'COUNTER/DECREMENT':
       return state - 1;
 
     default:
