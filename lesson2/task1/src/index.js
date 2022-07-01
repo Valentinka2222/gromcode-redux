@@ -1,17 +1,17 @@
-const INCREMENT = 'COUNTER/INCREMENT';
-const DECREMENT = 'COUNTER/DECREMENT';
+export const INCREMENT = 'COUNTER/INCREMENT';
+export const DECREMENT = 'COUNTER/DECREMENT';
 
-const increment = () => {
+export const increment = () => {
   return {
     type: INCREMENT,
   };
 };
-const decrement = () => {
+export const decrement = () => {
   return {
     type: DECREMENT,
   };
 };
-export const counterReducer = (state = 0, action) => {
+const counterReducer = (state = 0, action) => {
   switch (action.type) {
     case INCREMENT:
       return state + 1;
