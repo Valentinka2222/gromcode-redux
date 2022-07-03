@@ -5,9 +5,15 @@ const user = {
   name: 'John',
   id: 23,
 };
+const user1 = {
+  name: 'John',
+  id: 24,
+};
 store.dispatch(addUser(user));
+
+store.dispatch(addUser(user1));
+store.dispatch(deleteUser(24));
 const state = store.getState();
 console.log(state);
-store.dispatch(deleteUser(23));
 
 console.log(store.getState());
