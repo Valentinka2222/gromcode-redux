@@ -5,12 +5,12 @@ export const userReducer = (state = initialState, action) => {
     case ADD_USER:
       return {
         ...state,
-        userList: state.userList.concat(action.payload.user),
+        userList: state.usersList.concat(action.payload.user),
       };
     case DELETE_USER:
       return {
         ...state,
-        userList: state.userList.filter(user => user.id !== action.payload.id),
+        userList: state.usersList.filter(user => user.id !== action.payload.id),
       };
 
     default:
