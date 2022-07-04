@@ -1,9 +1,11 @@
-import { createStore } from 'redux';
-import { userReducer } from './users.reducer';
-export const ADD_USER = 'USER/ADD';
-export const DELETE_USER = 'USER/DELETE';
-export const initialState = {
-  usersList: [],
-};
-const store = createStore(userReducer);
+import { createStore, combineReducers } from 'redux';
+import { counterReducer } from './counter.reducer';
+import userReducer from './users.reducer';
+
+const appReducer = combineReducers({
+  counter: counterReducer,
+  users: userReducer,
+});
+
+const store = createStore(appReducer);
 export default store;
