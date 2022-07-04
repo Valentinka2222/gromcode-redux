@@ -14,5 +14,5 @@ console.log(store.getState());
 store.dispatch(setUser({ id: 1, name: 'Tom' }));
 store.dispatch(setUser({ id: 2, name: 'Bob' }));
 store.dispatch(setUser({ id: 4, name: 'Bob' }));
-store.dispatch(removeUser(1));
+store.dispatch(removeUser('Bob'));
 console.log(store.getState());

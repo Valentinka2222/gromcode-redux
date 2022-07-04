@@ -8,11 +8,11 @@ export const setUser = userData => {
   };
 };
 
-export const removeUser = userId => {
+export const removeUser = name => {
   return {
     type: REMOVE_USER,
     payload: {
-      userId,
+      name,
     },
   };
 };
