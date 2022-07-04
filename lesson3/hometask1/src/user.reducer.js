@@ -1,4 +1,4 @@
-import { REMOVE_USER, SET_USER } from './users.actions';
+import { REMOVE_USER, SET_USER } from './user.actions';
 
 const initialState = {
   user: [],
