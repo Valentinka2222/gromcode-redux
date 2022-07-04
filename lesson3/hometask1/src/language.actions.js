@@ -1,4 +1,4 @@
-export const LANGUAGE = 'UI/LANGUAGE';
+export const LANGUAGE = 'LANGUAGE';
 
 export const setLanguage = lang => {
   return {
