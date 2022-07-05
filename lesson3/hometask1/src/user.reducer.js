@@ -10,7 +10,7 @@ export const userReducer = (state ={}, action) => {
  
     case REMOVE_USER:
       return {
-        user: delete(state.user[0])
+        user: delete(state.user)
       };
 
 
