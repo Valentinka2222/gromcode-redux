@@ -4,13 +4,13 @@ export const userReducer = (state ={}, action) => {
   switch (action.type) {
     case SET_USER: 
       return {
-        user: action.payload.userData
+        user: action.userData
       };
       
  
     case REMOVE_USER:
       return {
-        user: delete [state.user[0]]
+        user: delete(state.user[0])
       };
 
 

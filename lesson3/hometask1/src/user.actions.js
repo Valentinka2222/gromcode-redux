@@ -4,7 +4,7 @@ export const REMOVE_USER = 'USER/REMOVE_USER';
 export const setUser = userData => {
   return {
     type: SET_USER,
-    payload: { userData },
+   userData ,
   };
 };
 
