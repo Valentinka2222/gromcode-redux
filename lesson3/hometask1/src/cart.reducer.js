@@ -5,6 +5,7 @@ const initialState = {
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PRODUCT:
+   
       return {
         ...state,
         products: state.products.concat(action.payload.product),
