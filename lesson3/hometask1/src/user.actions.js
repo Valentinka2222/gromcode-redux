@@ -11,6 +11,5 @@ export const setUser = userData => {
 export const removeUser = () => {
   return {
     type: REMOVE_USER,
- 
-  };
+ };
 };
