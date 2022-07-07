@@ -1,0 +1,63 @@
+import React from 'react';
+import User from './User';
+import Pagination from './Pagination';
+import { connect } from 'react-redux';
+import * as usersListActions from './userList.actions';
+import * as userActions from './users.actions';
+import { usersList } from '../store';
+class UsersList extends React.Component {
+  itemsPerPage = 3;
+
+  prevBtnHandler = () => {
+    this.props.prevPage();
+  };
+  nextBtnHandler = () => {
+    this.props.nextPage();
+  };
+
+  render() {
+    const usersToRender = this.props
+      .createUser(usersList)
+      .usersList.slice(
+        this.itemsPerPage * (this.props.currentPage - 1),
+        (this.props.currentPage - 1) * this.itemsPerPage + this.itemsPerPage,
+      );
+
+    return (
+      <div>
+        <Pagination
+          currentPage={this.props.currentPage}
+          goNext={this.nextBtnHandler}
+          goPrev={this.prevBtnHandler}
+          totalItems={usersToRender.length}
+          itemsPerPage={this.itemsPerPage}
+        />
+
+        <ul className="users">
+          {usersToRender.map(user => (
+            <User key={user.id} {...user} />
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
+
+const mapState = state => {
+  return {
+    users: state.users.usersList,
+    currentPage: state.currentPage,
+  };
+};
+
+const mapDispatch = {
+  nextPage: usersListActions.nextPage,
+  prevPage: usersListActions.prevPage,
+  createUser: userActions.addUser,
+  deleteUser: userActions.deleteUser,
+};
+const connector = connect(mapState, mapDispatch);
+
+const ConnectedUsersList = connector(UsersList);
+
+export default ConnectedUsersList;
