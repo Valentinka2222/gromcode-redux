@@ -1,4 +1,4 @@
-import { NEXT_PAGE, PREV_PAGE } from './userList.actions';
+import { NEXT_PAGE, PREV_PAGE } from './usersList.actions';
 
 const pageReducer = (state = 1, action) => {
   switch (action.type) {
