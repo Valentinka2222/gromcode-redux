@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Pagination = ({ currentPage, goPrev, goNext, totalItems, itemsPerPage }) => {
+function Pagination({ currentPage, goPrev, goNext, totalItems, itemsPerPage }) {
   const isPrevPageAvailable = currentPage > 0;
   const isNextPageAvailable = currentPage < Math.ceil(totalItems / itemsPerPage) - 1;
 
@@ -15,6 +15,6 @@ const Pagination = ({ currentPage, goPrev, goNext, totalItems, itemsPerPage }) =
       </button>
     </div>
   );
-};
+}
 
 export default Pagination;
