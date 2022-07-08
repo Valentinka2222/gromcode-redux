@@ -8,12 +8,9 @@ import { usersList } from '../store';
 class UsersList extends React.Component {
   itemsPerPage = 3;
 
-  prevBtnHandler = () => {
-    this.props.prevPage();
-  };
-  nextBtnHandler = () => {
-    this.props.nextPage();
-  };
+  prevBtnHandler = () => this.props.prevPage();
+
+  nextBtnHandler = () => this.props.nextPage();
 
   render() {
     const { createUsersList, currentPage } = this.props;
