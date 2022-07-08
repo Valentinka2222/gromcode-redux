@@ -7,7 +7,7 @@ const Pagination = ({ currentPage, goPrev, goNext, totalItems, itemsPerPage }) =
   if (currentPage === 0) {
     isPrevPageAvailable = null;
   }
-  if (totalItems % itemsPerPage === 1 || totalItems < itemsPerPage) {
+  if (totalItems % itemsPerPage === 1 || totalItems < itemsPerPage || totalItems < itemsPerPage) {
     isNextPageAvailable = null;
   }
 
