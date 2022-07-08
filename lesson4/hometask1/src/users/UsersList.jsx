@@ -16,9 +16,8 @@ class UsersList extends React.Component {
   };
 
   render() {
-    const { createusersList, currentPage } = this.props;
-    const arr = createusersList(usersList);
-    const usersToRender = arr.usersList.slice(
+    const { createUsersList, currentPage } = this.props;
+    const usersToRender = createUsersList(usersList).usersList.slice(
       this.itemsPerPage * currentPage,
       currentPage * this.itemsPerPage + this.itemsPerPage,
     );
@@ -53,8 +52,8 @@ const mapState = state => {
 const mapDispatch = {
   nextPage: usersListActions.nextPage,
   prevPage: usersListActions.prevPage,
-  createusersList: userActions.addUser,
-  deleteusersList: userActions.deleteUser,
+  createUsersList: userActions.addUser,
+  deleteUsersList: userActions.deleteUser,
 };
 const connector = connect(mapState, mapDispatch);
 
