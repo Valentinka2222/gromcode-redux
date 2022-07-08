@@ -17,6 +17,7 @@ class UsersList extends React.Component {
 
   render() {
     const { createusersList, currentPage } = this.props;
+    console.log(currentPage);
     const usersToRender = createusersList(usersList).usersList.slice(
       this.itemsPerPage * (currentPage - 1),
       (currentPage - 1) * this.itemsPerPage + this.itemsPerPage,
@@ -45,7 +46,7 @@ class UsersList extends React.Component {
 const mapState = state => {
   return {
     users: state.users.usersList,
-    currentPage: state.currentPage,
+    currentPage: state.currentPage + 1,
   };
 };
 
