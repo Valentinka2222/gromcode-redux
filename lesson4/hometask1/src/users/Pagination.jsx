@@ -2,7 +2,7 @@ import React from 'react';
 
 const Pagination = ({ currentPage, goPrev, goNext, totalItems, itemsPerPage }) => {
   const isPrevPageAvailable = currentPage === 1;
-  const isNextPageAvailable = totalItems % itemsPerPage === 1;
+  const isNextPageAvailable = totalItems % itemsPerPage >= 1;
   return (
     <div className="pagination">
       <button className="btn" onClick={goPrev} disabled={isPrevPageAvailable}>
