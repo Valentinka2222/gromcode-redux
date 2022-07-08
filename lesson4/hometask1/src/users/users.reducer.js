@@ -6,7 +6,7 @@ const userReducer = (state = [], action) => {
       return action.usersList;
 
     case DELETE_USER: {
-      return null;
+      return [];
     }
 
     default:
