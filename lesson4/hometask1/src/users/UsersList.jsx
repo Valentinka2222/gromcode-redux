@@ -7,19 +7,16 @@ import * as userActions from './users.actions';
 import { usersList } from '../store';
 class UsersList extends React.Component {
   itemsPerPage = 3;
-
+  newUser = this.props.createUsersList(usersList).user
+  
   prevBtnHandler = () => this.props.prevPage();
 
   nextBtnHandler = () => this.props.nextPage();
 
-
-
-
-
-  render() {
-
-    const { createUsersList, currentPage } = this.props;
-    const usersToRender =createUsersList(usersList).user.slice(
+ render() {
+   const { createUsersList, currentPage } = this.props;
+  
+    const usersToRender =this.newUser.slice(
       this.itemsPerPage * (currentPage ),
       (currentPage ) * this.itemsPerPage + this.itemsPerPage,
     );
@@ -45,7 +42,7 @@ class UsersList extends React.Component {
 }
 
 const mapState = state => {
-
+console.log(state)
   return {
     users: state.user,
     currentPage: state.currentPage,
