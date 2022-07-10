@@ -13,7 +13,7 @@ const Pagination = ({ currentPage, goPrev, goNext, totalItems, itemsPerPage }) =
       <button className="btn" onClick={goNext} disabled={isNextPageAvailable}>
         {!isNextPageAvailable && '→'}
       </button>
-    </div>1
+    </div>
   );
 };
 
