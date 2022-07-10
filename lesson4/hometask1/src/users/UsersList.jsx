@@ -7,11 +7,11 @@ import * as userActions from './users.actions';
 import { usersList } from '../store';
 class UsersList extends React.Component {
   itemsPerPage = 3;
-  newUser = this.props.createUsersList(usersList).user;
+  newUser = this.props.createUsersList(usersList);
   render() {
-   const {  currentPage } = this.props;
-  const usersToRender =this.newUser.slice(
-      this.itemsPerPage * (currentPage ),
+   const { currentPage } = this.props;
+  const usersToRender =this.newUser.user.slice(
+      this.itemsPerPage * (currentPage),
       (currentPage ) * this.itemsPerPage + this.itemsPerPage,
     );
 
@@ -20,7 +20,7 @@ class UsersList extends React.Component {
         <Pagination
           currentPage={currentPage}
           goNext={()=>this.props.nextPage()}
-          goPrev={() => this.props.prevPage()}
+          goPrev={() =>this.props.prevPage()}
           totalItems={usersToRender.length}
           itemsPerPage={this.itemsPerPage}
         />
