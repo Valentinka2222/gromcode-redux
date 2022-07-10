@@ -49,7 +49,6 @@ const mapDispatch = {
   nextPage: usersListActions.nextPage,
   prevPage: usersListActions.prevPage,
   createUsersList: userActions.addUser,
-  deleteUsersList: userActions.deleteUser,
 };
 const connector = connect(mapState, mapDispatch);
 
