@@ -8,6 +8,13 @@ import { usersList } from '../store';
 class UsersList extends React.Component {
   itemsPerPage = 3;
 
+  prevBtnHandler = () => this.props.prevPage();
+
+  nextBtnHandler = () => this.props.nextPage();
+
+
+
+
 
   render() {
 
@@ -21,8 +28,8 @@ class UsersList extends React.Component {
       <div>
         <Pagination
           currentPage={currentPage}
-          goNext={this.props.nextPage}
-          goPrev={this.props.prevPage}
+          goNext={ this.nextBtnHandler }
+          goPrev={  this.prevBtnHandler }
           totalItems={usersToRender.length}
           itemsPerPage={this.itemsPerPage}
         />
