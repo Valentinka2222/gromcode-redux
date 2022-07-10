@@ -11,7 +11,7 @@ class UsersList extends React.Component {
 
   render() {
     const { createUsersList, currentPage } = this.props;
-    const usersToRender = createUsersList(usersList).usersList.slice(
+    const usersToRender = usersList.slice(
       this.itemsPerPage * (currentPage ),
       (currentPage ) * this.itemsPerPage + this.itemsPerPage,
     );
