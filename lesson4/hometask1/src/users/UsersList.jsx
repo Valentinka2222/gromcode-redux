@@ -37,8 +37,9 @@ class UsersList extends React.Component {
 }
 
 const mapState = state => {
+  console.log(state.users)
   return {
-    users: state.users.usersList,
+    users: state.users,
     currentPage: state.currentPage,
   };
 };
