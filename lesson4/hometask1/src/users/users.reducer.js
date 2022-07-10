@@ -1,13 +1,14 @@
 import { DELETE_USER, ADD_USER } from './users.actions';
 
-const userReducer = (state = [], action) => {
+const userReducer = (state = null, action) => {
   switch (action.type) {
     case ADD_USER:
-      return action.usersList;
+      return { usersList: action.user }
+    
 
-    case DELETE_USER: {
+    case DELETE_USER: 
       return null;
-    }
+  
 
     default:
       return state;
