@@ -28,8 +28,8 @@ class UsersList extends React.Component {
       <div>
         <Pagination
           currentPage={currentPage}
-          goNext={ this.nextBtnHandler }
-          goPrev={  this.prevBtnHandler }
+          goNext={this.nextBtnHandler }
+          goPrev={this.prevBtnHandler }
           totalItems={usersToRender.length}
           itemsPerPage={this.itemsPerPage}
         />
