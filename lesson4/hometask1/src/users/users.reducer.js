@@ -4,7 +4,7 @@ const userReducer = (state = null, action) => {
   switch (action.type) {
     case ADD_USER:
       return { usersList: action.usersList };
-   case DELETE_USER:
+    case DELETE_USER:
       return null;
     default:
       return state;
