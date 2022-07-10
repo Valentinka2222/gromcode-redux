@@ -2,7 +2,7 @@ import React from 'react';
 import User from './User';
 import Pagination from './Pagination';
 import { connect } from 'react-redux';
-import * as usersListActions from './userList.actions';
+import * as usersListActions from './pagination.actions';
 import * as userActions from './users.actions';
 import { usersList } from '../usersList';
 class UsersList extends React.Component {

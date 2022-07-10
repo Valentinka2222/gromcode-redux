@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux';
-import pageReducer from './users/userList.reducer';
+import pageReducer from './users/pagination.reducer';
 import usersReducer from './users/users.reducer';
 
 const reducer = combineReducers({
