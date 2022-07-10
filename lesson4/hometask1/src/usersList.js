@@ -1,4 +1,4 @@
-export const usersList = [
+export const users = [
   {
     id: 'id-1',
     age: 17,
