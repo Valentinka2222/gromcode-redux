@@ -13,7 +13,7 @@ class UsersList extends React.Component {
   render() {
     const { currentPage,nextPage,prevPage } = this.props;
 
-    const usersToRender = this.newUser.listOfUser.slice(
+    const usersToRender = this.newUser.usersList.slice(
       this.itemsPerPage * currentPage,
       currentPage * this.itemsPerPage + this.itemsPerPage,
     );
@@ -40,7 +40,7 @@ class UsersList extends React.Component {
 
 const mapState = state => {
   return {
-    users: state.listOfUser,
+    usersList: state.usersList,
     currentPage: state.currentPage,
   };
 };
