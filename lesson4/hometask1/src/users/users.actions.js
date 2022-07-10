@@ -1,15 +1,15 @@
-export const ADD_USER = 'USERS/ADD_USER';
-export const DELETE_USER = 'USERS/DELETE_USER';
+export const GO_NEXT= 'USERS/GO_NEXT';
+export const GO_PREV = 'USERS/DELETE_USER';
 
-export const addUser = usersList => {
+export const goNext = ()=> {
   return {
-    type: ADD_USER,
-    usersList,
+    type: GO_NEXT,
+
   };
 };
 
-export const deleteUser = () => {
+export const goPrev = () => {
   return {
-    type: DELETE_USER,
+    type:  GO_PREV,
   };
 };

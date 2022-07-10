@@ -2,18 +2,17 @@ import React from 'react';
 import User from './User';
 import Pagination from './Pagination';
 import { connect } from 'react-redux';
-import * as usersListActions from './pagination.actions';
+
 import * as userActions from './users.actions';
-import { users } from '../usersList';
+
 class UsersList extends React.Component {
   itemsPerPage = 3;
 
-  newUser = this.props.createUsersList(users);
 
   render() {
-    const { currentPage, nextPage, prevPage } = this.props;
+    const { usersList,currentPage, nextPage, prevPage } = this.props;
 
-    const usersToRender = this.newUser.usersList.slice(
+    const usersToRender = usersList.slice(
       this.itemsPerPage * currentPage,
       currentPage * this.itemsPerPage + this.itemsPerPage,
     );
@@ -39,16 +38,18 @@ class UsersList extends React.Component {
 }
 
 const mapState = state => {
+  console.log(state.users)
+
   return {
-    usersList: state.usersList,
-    currentPage: state.currentPage,
+    usersList: state.users.usersList,
+    currentPage: state.users.currentPage,
   };
 };
 
 const mapDispatch = {
-  nextPage: usersListActions.nextPage,
-  prevPage: usersListActions.prevPage,
-  createUsersList: userActions.addUser,
+  nextPage: userActions.goNext,
+  prevPage: userActions.goPrev,
+
 };
 const connector = connect(mapState, mapDispatch);
 
