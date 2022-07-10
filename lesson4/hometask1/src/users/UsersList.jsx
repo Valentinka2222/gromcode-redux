@@ -7,10 +7,11 @@ import * as userActions from './users.actions';
 import { usersList } from '../store';
 class UsersList extends React.Component {
   itemsPerPage = 3;
-  newUser = this.props.createUsersList(usersList);
+  newUser =[...this.props.createUsersList(usersList).user];
   render() {
-   const { currentPage } = this.props;
-  const usersToRender =this.newUser.user.slice(
+    const { currentPage } = this.props;
+
+  const usersToRender =this.newUser.slice(
       this.itemsPerPage * (currentPage),
       (currentPage ) * this.itemsPerPage + this.itemsPerPage,
     );
