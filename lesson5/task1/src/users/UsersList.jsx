@@ -10,9 +10,10 @@ class UsersList extends React.Component {
   itemsPerPage = 3;
 
   render() {
-    const { usersList, currentPage, nextPage, prevPage } = this.props;
+    console.log(this.props.users);
+    const { users, currentPage, nextPage, prevPage } = this.props;
 
-    const usersToRender = usersList.slice(
+    const usersToRender = users.slice(
       this.itemsPerPage * currentPage,
       currentPage * this.itemsPerPage + this.itemsPerPage,
     );
@@ -21,8 +22,8 @@ class UsersList extends React.Component {
       <div>
         <Pagination
           currentPage={currentPage}
-          goNext={() => nextPage()}
-          goPrev={() => prevPage()}
+          goNext={nextPage}
+          goPrev={prevPage}
           totalItems={usersToRender.length}
           itemsPerPage={this.itemsPerPage}
         />
@@ -48,6 +49,5 @@ const mapDispatch = {
   nextPage: userActions.goNext,
   prevPage: userActions.goPrev,
 };
-const connector = connect(mapState, mapDispatch)(UsersList);
 
-export default ConnectedUsersList;
+export default connect(mapState, mapDispatch)(UsersList);
