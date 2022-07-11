@@ -38,8 +38,6 @@ class UsersList extends React.Component {
 }
 
 const mapState = state => {
-  console.log(state.users);
-
   return {
     users: usersListSelector(state),
     currentPage: currentPageSelector(state),
@@ -50,7 +48,7 @@ const mapDispatch = {
   nextPage: userActions.goNext,
   prevPage: userActions.goPrev,
 };
-const connector = connect(mapState, mapDispatch);
+const connector = connect(mapState, mapDispatch)(UsersList);
 
 const ConnectedUsersList = connector(UsersList);
 
