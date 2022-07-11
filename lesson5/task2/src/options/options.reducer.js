@@ -1,6 +1,6 @@
 import { TOOGLE_OPTION } from './options.actions';
 
-const optionsMap = {
+const optionsList = {
   'id-0': {
     id: 'id-0',
     name: '19-inch wheels',
@@ -31,14 +31,13 @@ const optionsMap = {
   },
 };
 const initialState = {
-  optionsList: optionsMap,
-  selected: ['id-6'],
+  optionsList: optionsList,
+  selected: [],
 };
 const optionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case TOOGLE_OPTION: {
       const { optionId } = action.payload;
-      console.log(optionId);
       const newSelectedIds = state.selected.includes(optionId)
         ? state.selected.filter(id => id !== optionId)
         : state.selected.concat(optionId);
