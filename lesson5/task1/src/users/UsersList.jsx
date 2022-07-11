@@ -4,7 +4,7 @@ import Pagination from './Pagination';
 import { connect } from 'react-redux';
 
 import * as userActions from './users.actions';
-import { usersListSelector, currentPageSelector } from './users.selector';
+import { usersListSelector, currentPageSelector } from './users.selectors';
 
 class UsersList extends React.Component {
   itemsPerPage = 3;
