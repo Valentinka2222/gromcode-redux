@@ -10,7 +10,6 @@ class UsersList extends React.Component {
   itemsPerPage = 3;
 
   render() {
-    console.log(this.props.users);
     const { users, currentPage, nextPage, prevPage } = this.props;
 
     const usersToRender = users.slice(
