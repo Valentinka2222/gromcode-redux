@@ -1,4 +1,4 @@
-import { fetchCityData, WEATHER_DATA_RECIEVED, WEATHER_DATA_STARTED } from './weather.actions';
+import { WEATHER_DATA_RECIEVED } from './weather.actions';
 const initialData = {
   weatherData: [],
 };
