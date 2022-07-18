@@ -1,13 +1,12 @@
 import React from 'react';
-import City from './City';
 import { connect } from 'react-redux';
 
-import { cityDataSelector, isFetchingSelector } from './weather.selector';
-import { fetchCityData } from './weather.actions';
+import { cityDataSelector } from './weather.selector';
+import { getWeatherData } from './weather.actions';
 
 class Weather extends React.Component {
   componentDidMount() {
-    this.props.fetchCityData();
+    this.props.getWeatherData();
   }
 
   render() {
@@ -16,7 +15,10 @@ class Weather extends React.Component {
         <h1 className="weather__title">Weather data</h1>
         <ul className="cities-list">
           {this.props.weatherData.map(city => (
-            <City key={city.id} {...city} />
+            <li key={city.id} {...city} className="city">
+              <span className="city__name">{city.name}</span>
+              <span className="city__temperature">{city.temperature}</span>
+            </li>
           ))}
         </ul>
       </main>
@@ -25,7 +27,7 @@ class Weather extends React.Component {
 }
 
 const mapDispatch = {
-  fetchCityData,
+  getWeatherData,
 };
 const mapState = state => {
   return {
