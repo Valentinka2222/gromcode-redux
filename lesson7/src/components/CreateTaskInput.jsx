@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const CreateTaskInput = () => {
+const CreateTaskInput = ({ onCreate }) => {
   const [value, setValue] = useState('');
-
   const handleChange = event => {
-    setValue({
-      value: event.target.value,
-    });
+    setValue(event.target.value);
   };
   const handleTaskCreate = () => {
-    this.props.onCreate(value);
-    setValue({ value: '' });
+    onCreate(value);
+    setValue('');
   };
 
   return (
@@ -23,5 +20,10 @@ const CreateTaskInput = () => {
     </div>
   );
 };
-
+CreateTaskInput.propTypes = {
+  value: PropTypes.string,
+};
+CreateTaskInput.defaultProps = {
+  value: '',
+};
 export default CreateTaskInput;
